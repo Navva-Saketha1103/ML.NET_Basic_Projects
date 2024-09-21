@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AggressionScorer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f18f4c134ae66a4aa5e5e0246931e96bc4058b1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3e4c477f01f923f107f56ad2318facd14bb82d6")]
 [assembly: System.Reflection.AssemblyProductAttribute("AggressionScorer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AggressionScorer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
