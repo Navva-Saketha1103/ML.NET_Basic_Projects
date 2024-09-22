@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AggressionScorerModel;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AggressionAPI.Controllers
 {
@@ -6,9 +7,11 @@ namespace AggressionAPI.Controllers
     [Route("[controller]")]
     public class AggressionScoreController : ControllerBase
     {
-        public AggressionScoreController()
-        {
+        private readonly AggressionScorer _aggressionScorer;
 
+        public AggressionScoreController(AggressionScorer aggressionScorer)
+        {
+            _aggressionScorer = aggressionScorer;
         }
 
         [HttpPost]
@@ -19,10 +22,12 @@ namespace AggressionAPI.Controllers
 
         private AggressionPrediction ScoreComment(string comment)
         {
+            var classification = _aggressionScorer.Predict(comment);
+
             return new AggressionPrediction()
             {
-                IsAggressive = false,
-                Probability = -1
+                IsAggressive = classification.Prediction,
+                Probability = classification.Probability
             };
         }
     }

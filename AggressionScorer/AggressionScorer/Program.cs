@@ -7,8 +7,6 @@ namespace AggressionScorer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Aggression Scorer");
-
             var mlContext = new MLContext(0);
 
             // Build Pipeline
@@ -45,7 +43,6 @@ namespace AggressionScorer
             // Save the model
             var modelFile = @"C:\\Users\\navva\\OneDrive\\Desktop\\ML.NET_Basic_Projects\\AggressionScorer\\AggressionScorer\\Model\\AggressionScoreModel.zip";
             mlContext.Model.Save(model, trainDataView.Schema, modelFile);
-            Console.WriteLine(modelFile);
         }
     }
 }
