@@ -1,13 +1,15 @@
-﻿using System.Globalization;
+﻿using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
 
 namespace AggressionScorer
 {
     public class DataPreparer
     {
         public static void CreatePreparedDataFile(string outputFile, bool onlySaveSmallSubset = false)
-        {;
-            string filePath = "C:\\Users\\navva\\OneDrive\\Desktop\\ML.NET_Basic_Projects\\AggressionScorer\\AggressionScorer\\Data\\aggression_annotations.tsv";
-            var annotations = File.ReadAllLines(filePath).Skip(1);
+        {
+            var annotations = File.ReadAllLines("C:\\Users\\navva\\OneDrive\\Desktop\\ML.NET_Basic_Projects\\AggressionScorer\\AggressionScorer\\Data\\aggression_annotations.tsv").Skip(1);
 
             var aggressiveScoreMap = new Dictionary<int, List<int>>();
 
@@ -32,8 +34,7 @@ namespace AggressionScorer
             }
 
             // Pair all comments with aggression score
-            filePath = "C:\\Users\\navva\\OneDrive\\Desktop\\ML.NET_Basic_Projects\\AggressionScorer\\AggressionScorer\\Data\\aggression_annotations.tsv";
-            var allComments = File.ReadAllLines(filePath).Skip(1);
+            var allComments = File.ReadAllLines("C:\\Users\\navva\\OneDrive\\Desktop\\ML.NET_Basic_Projects\\AggressionScorer\\AggressionScorer\\Data\\aggression_annotated_comments.tsv").Skip(1);
 
             var formattedOutput = allComments.Select(c =>
             {

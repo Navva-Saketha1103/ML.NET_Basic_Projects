@@ -5,7 +5,7 @@ namespace AggressionScorerModel
 {
     public static class AggressionScorerServiceExtensions
     {
-        private static readonly string _modelfile = @"C:\\Users\\navva\\OneDrive\\Desktop\\ML.NET_Basic_Projects\\AggressionScorer\\AggressionScorerModel\\Model\\AggressionScoreModel.zip";
+        private static readonly string _modelfile = @"C:\Users\navva\OneDrive\Desktop\ML.NET_Basic_Projects\AggressionScorer\AggressionScorerModel\Model\AggressionScoreRetrainedModel.zip";
 
         public static void AddAggressionScorePredictionEnginePool(this IServiceCollection services)
         {
